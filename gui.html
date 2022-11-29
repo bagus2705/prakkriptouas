@@ -9,16 +9,16 @@
 <table class="center">
 <tr>
 <td> P:</td>
-<td><input type="number" value="53" id="p"></td>
+<td><input type="number" value="3" id="p"></td>
 </tr>
 <tr>
 <td> Q :</td>
-<td><input type="number" value="59" id="q"></p>
+<td><input type="number" value="7" id="q"></p>
 </td>
 </tr>
 <tr>
 <td>Pesan:<br>[A=1, B=2,...]</td>
-<td><input type="number" value="89" id="msg"></p>
+<td><input type="number" value="20" id="msg"></p>
 </td>
 </tr>
 <tr>
@@ -43,6 +43,11 @@
 <td>Cipher Text:</td>
 <td>
 <p id="ciphertext(ct)"></p>
+</td>
+</tr>
+<td>Hasil Dekripsi:</td>
+<td>
+<p id="dekripsitext(dt)"></p>
 </td>
 </tr>
 <tr>
@@ -82,10 +87,12 @@ ctt = Math.pow(no, e).toFixed(0);
 ct = ctt % n;
 dtt = Math.pow(ct, d).toFixed(0);
 dt = dtt % n;
+
 document.getElementById('publickey(N)').innerHTML = n;
 document.getElementById('eksponen(e)').innerHTML = e;
 document.getElementById('privatekey(d)').innerHTML = d;
 document.getElementById('ciphertext(ct)').innerHTML = ct;
+document.getElementById('dekripsitext(dt)').innerHTML = dt;
 }
 </script>
 </html>
