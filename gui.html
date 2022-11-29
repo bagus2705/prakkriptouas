@@ -1,53 +1,52 @@
 <html>
 <head>
-<title>RSA Encryption</title>
+<title>RSA </title>
 <meta name="viewport" content="width=device-width, initialscale=1.0">
 </head>
 <body>
-<h1 style="text-align: center;">RSA Algorithm</h1>
-<h2 style="text-align: center;">Implemented Using HTML & Javascript</h2>
+<h1 style="text-align: center;">RSA </h1>
 <hr>
 <table class="center">
 <tr>
-<td>Enter P:</td>
+<td> P:</td>
 <td><input type="number" value="53" id="p"></td>
 </tr>
 <tr>
-<td>Enter Q :</td>
+<td> Q :</td>
 <td><input type="number" value="59" id="q"></p>
 </td>
 </tr>
 <tr>
-<td>Enter the Message:<br>[A=1, B=2,...]</td>
+<td>Pesan:<br>[A=1, B=2,...]</td>
 <td><input type="number" value="89" id="msg"></p>
 </td>
 </tr>
 <tr>
-<td>Public Key(N):</td>
+<td>Public Key:</td>
 <td>
 <p id="publickey(N)"></p>
 </td>
 </tr>
 <tr>
-<td>Exponent(e):</td>
+<td>Eksponen:</td>
 <td>
-<p id="exponent(e)"></p>
+<p id="eksponen(e)"></p>
 </td>
 </tr>
 <tr>
-<td>Private Key(d):</td>
+<td>Private Key:</td>
 <td>
 <p id="privatekey(d)"></p>
 </td>
 </tr>
 <tr>
-<td>Cipher Text(c):</td>
+<td>Cipher Text:</td>
 <td>
 <p id="ciphertext(ct)"></p>
 </td>
 </tr>
 <tr>
-    <td><button onclick="RSA();">Apply RSA</button></td>
+    <td><button onclick="RSA();">RSA</button></td>
     </tr>
     </table>
    
@@ -84,7 +83,7 @@ ct = ctt % n;
 dtt = Math.pow(ct, d).toFixed(0);
 dt = dtt % n;
 document.getElementById('publickey(N)').innerHTML = n;
-document.getElementById('exponent(e)').innerHTML = e;
+document.getElementById('eksponen(e)').innerHTML = e;
 document.getElementById('privatekey(d)').innerHTML = d;
 document.getElementById('ciphertext(ct)').innerHTML = ct;
 }
