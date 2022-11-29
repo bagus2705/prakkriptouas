@@ -54,7 +54,6 @@
     <td><button onclick="RSA();">RSA</button></td>
     </tr>
     </table>
-   
     </body>
     <style>
         .center {
@@ -62,7 +61,7 @@
   margin-right: auto;
 }
     </style>
-    <script type="text/javascript">
+    <script>
     function RSA() {
     var gcd, p, q, no, n, t, e, i, x;
     gcd = function (a, b) { return (!b) ? a : gcd(b, a % b); };
@@ -76,7 +75,7 @@
     break;
     }
     }
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < 50; i++) {
     x = 1 + i * t
     if (x % e == 0) {
     d = x / e;
