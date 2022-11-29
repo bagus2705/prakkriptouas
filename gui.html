@@ -9,16 +9,16 @@
 <table class="center">
 <tr>
 <td> P:</td>
-<td><input type="number" value="3" id="p"></td>
+<td><input type="number" value="41" id="p"></td>
 </tr>
 <tr>
 <td> Q :</td>
-<td><input type="number" value="7" id="q"></p>
+<td><input type="number" value="11" id="q"></p>
 </td>
 </tr>
 <tr>
 <td>Pesan:<br>[A=1, B=2,...]</td>
-<td><input type="number" value="20" id="msg"></p>
+<td><input type="number" value="34" id="msg"></p>
 </td>
 </tr>
 <tr>
@@ -82,10 +82,23 @@
     break;
     }
 }
-ctt = Math.pow(no, e).toFixed(0);
-ct = ctt % n;
-dtt = Math.pow(ct, d).toFixed(0);
-dt = dtt % n;
+function powerMod(angka, eksponen, mod) {
+    if (mod === 1) return 0;
+    var hasil = 1;
+    angka = angka % mod;
+    while (eksponen > 0) {
+        if (eksponen % 2 === 1)  
+            hasil = (hasil * angka) % mod;
+        eksponen = eksponen >> 1; 
+        angka = (angka * angka) % mod;
+    }
+    return hasil;
+}
+
+ct = powerMod(no, e,n).toFixed(0);
+dt = powerMod(ct, d,n).toFixed(0);
+
+
 
 document.getElementById('publickey(N)').innerHTML = n;
 document.getElementById('eksponen(e)').innerHTML = e;
