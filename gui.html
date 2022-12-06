@@ -69,7 +69,7 @@
     </tr>
     <tr>
     <td>Pesan:</td>
-    <td><input type="number" value="34" id="msg2"></p>
+    <td><input type="text" id="msg2" maxlength="1" size="1"></p>
     </td>
     </tr>
     <tr>
@@ -127,11 +127,11 @@ function powerMod(angka, eksponen, mod) {
 }
 
 function RSATeks() {
-var gcd, p, q, no, n, t, e, i, x;
+var gcd, p, q, no, n, t, e, i, x,psn;
 gcd = function (a, b) { return (!b) ? a : gcd(b, a % b); };
 p = document.getElementById('p2').value;
 q = document.getElementById('q2').value;
-no = document.getElementById('msg2').value;
+no = document.getElementById('msg2').value.charCodeAt(0);
 n = p * q;
 if (n<no){
     document.getElementById('dekripsitext(dt)2').innerHTML = "n kurang dari pesan mohon diperbaiki";
