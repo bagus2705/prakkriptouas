@@ -51,7 +51,7 @@
 </td>
 </tr>
 <tr>
-    <td><button onclick="RSA();">RSA Angka</button></td>
+    <td><button onclick="RSA();">RSA  Angka</button></td>
     </tr>
     </table>
 <body>
@@ -113,26 +113,6 @@
 }
     </style>
     <script>
-    function RSATeks() {
-    var gcd, p, q, no, n, t, e, i, x;
-    gcd = function (a, b) { return (!b) ? a : gcd(b, a % b); };
-    p = document.getElementById('p2').value;
-    q = document.getElementById('q2').value;
-    no = document.getElementById('msg2').value;
-    n = p * q;
-    t = (p - 1) * (q - 1);
-    for (e = 2; e < t; e++) {
-    if (gcd(e, t) == 1) {
-    break;
-    }
-    }
-    for (i = 0; i < 50; i++) {
-    x = 1 + i * t
-    if (x % e == 0) {
-    d = x / e;
-    break;
-    }
-}
 function powerMod(angka, eksponen, mod) {
     if (mod === 1) return 0;
     var hasil = 1;
@@ -145,6 +125,32 @@ function powerMod(angka, eksponen, mod) {
     }
     return hasil;
 }
+
+function RSATeks() {
+var gcd, p, q, no, n, t, e, i, x;
+gcd = function (a, b) { return (!b) ? a : gcd(b, a % b); };
+p = document.getElementById('p2').value;
+q = document.getElementById('q2').value;
+no = document.getElementById('msg2').value;
+n = p * q;
+if (n<no){
+    document.getElementById('dekripsitext(dt)2').innerHTML = "n kurang dari pesan mohon diperbaiki";
+     return;
+    }
+ t = (p - 1) * (q - 1);
+ for (e = 2; e < t; e++) {
+ if (gcd(e, t) == 1) {
+ break;
+    }
+    }
+    for (i = 0; i < 50; i++) {
+    x = 1 + i * t
+    if (x % e == 0) {
+    d = x / e;
+    break;
+    }
+}
+
 
 ct = powerMod(no, e,n).toFixed(0);
 dt = powerMod(ct, d,n).toFixed(0);
@@ -165,6 +171,10 @@ function RSA() {
     q = document.getElementById('q').value;
     no = document.getElementById('msg').value;
     n = p * q;
+      if (n<no){
+        document.getElementById('dekripsitext(dt)').innerHTML = "n harus lebih dari pesan";
+        return;
+    }
     t = (p - 1) * (q - 1);
     for (e = 2; e < t; e++) {
     if (gcd(e, t) == 1) {
@@ -178,18 +188,7 @@ function RSA() {
     break;
     }
 }
-function powerMod(angka, eksponen, mod) {
-    if (mod === 1) return 0;
-    var hasil = 1;
-    angka = angka % mod;
-    while (eksponen > 0) {
-        if (eksponen % 2 === 1)  
-            hasil = (hasil * angka) % mod;
-        eksponen = eksponen >> 1; 
-        angka = (angka * angka) % mod;
-    }
-    return hasil;
-}
+
 
 ct = powerMod(no, e,n).toFixed(0);
 dt = powerMod(ct, d,n).toFixed(0);
