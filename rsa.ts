@@ -179,9 +179,9 @@ function generate() {
     let q = document.getElementById('q').value;
     let n, e, d;
     [[e,n],[d,n]] = keyGen(p, q);
-    document.getElementById('publickey(N)').innerHTML = '('+e+','+n+')';
+    document.getElementById('publickey(N)').innerHTML = '( '+e+' , '+n+' )';
     document.getElementById('eksponen(e)').innerHTML = e;
-    document.getElementById('privatekey(d)').innerHTML = '('+d+','+n+')';
+    document.getElementById('privatekey(d)').innerHTML = '( '+d+' , '+n+' )';
 
 }
 

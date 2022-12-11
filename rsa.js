@@ -156,9 +156,9 @@ function generate() {
     var q = document.getElementById('q').value;
     var n, e, d;
     _a = keyGen(p, q), _b = _a[0], e = _b[0], n = _b[1], _c = _a[1], d = _c[0], n = _c[1];
-    document.getElementById('publickey(N)').innerHTML = '(' + e + ',' + n + ')';
+    document.getElementById('publickey(N)').innerHTML = '( ' + e + ' , ' + n + ' )';
     document.getElementById('eksponen(e)').innerHTML = e;
-    document.getElementById('privatekey(d)').innerHTML = '(' + d + ',' + n + ')';
+    document.getElementById('privatekey(d)').innerHTML = '( ' + d + ' , ' + n + ' )';
 }
 function rsaangka() {
     var n = document.getElementById('n1').value;
