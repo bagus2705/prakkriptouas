@@ -1,205 +1,139 @@
 <html>
+
 <head>
-<title>RSA  </title>
-<meta name="viewport" content="width=device-width, initialscale=1.0">
+    <title>RSA </title>
+    <meta name="viewport" content="width=device-width, initialscale=1.0">
 </head>
-<body>
-<h1 style="text-align: center;">RSA </h1>
-<hr>
-<table class="center">
-<tr>
-<td> P:</td>
-<td><input type="number" value="41" id="p"></td>
-</tr>
-<tr>
-<td> Q :</td>
-<td><input type="number" value="11" id="q"></p>
-</td>
-</tr>
-<tr>
-<td>Pesan:</td>
-<td><input type="number" value="34" id="msg"></p>
-</td>
-</tr>
-<tr>
-<td>Public Key:</td>
-<td>
-<p id="publickey(N)"></p>
-</td>
-</tr>
-<tr>
-<td>Eksponen:</td>
-<td>
-<p id="eksponen(e)"></p>
-</td>
-</tr>
-<tr>
-<td>Private Key:</td>
-<td>
-<p id="privatekey(d)"></p>
-</td>
-</tr>
-<tr>
-<td>Cipher Text:</td>
-<td>
-<p id="ciphertext(ct)"></p>
-</td>
-</tr>
-<td>Hasil Dekripsi:</td>
-<td>
-<p id="dekripsitext(dt)"></p>
-</td>
-</tr>
-<tr>
-    <td><button onclick="RSA();">RSA  Angka</button></td>
-    </tr>
+
+<body><h1 style="text-align: center;">Keygen RSA </h1>
+    <hr>
+    <table class="center">
+        <tr>
+            <td> P:</td>
+            <td><input type="number" value="52711" id="p"></td>
+        </tr>
+        <tr>
+            <td> Q :</td>
+            <td><input type="number" value="5381" id="q"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>Public Key:</td>
+            <td>
+                <p id="publickey(N)"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>Private Key:</td>
+            <td>
+                <p id="privatekey(d)"></p>
+            </td>
+        </tr>
+        <tr>X
+            <td>Eksponen:</td>
+            <td>
+                <p id="eksponen(e)"></p>
+            </td>
+        </tr>
+        <tr>
+            <td><button onclick="generate();">Generate</button></td>
+        </tr>
     </table>
-<body>
+    <h1 style="text-align: center;">RSA </h1>
+    <hr>
+    <table class="center">
+        <tr>
+            <td>Pesan:</td>
+            <td><input type="number" value="34" id="msg1"></td>
+        </tr>
+        <tr>
+            <td>n:</td>
+            <td>
+                <p id="publickey(N)"></p>
+                <input type="number" value="34" id="n1">
+            </td>
+        </tr>
+        <tr>
+            <td>e:</td>
+            <td>
+                <p id="privatekey(d)"></p>
+                <input type="number" value="34" id="e1">
+            </td>
+        </tr>
+        <tr>
+            <td>d:</td>
+            <td>
+                <p id="privatekey(d)"></p>
+                <input type="number" value="34" id="d1">
+            </td>
+        </tr>
+        <tr>
+            <td>Cipher Text:</td>
+            <td>
+                <p id="ct1"></p>
+            </td>
+        </tr>
+        <td>Hasil Dekripsi:</td>
+        <td>
+            <p id="dt1"></p>
+        </td>
+        </tr>
+        <tr>
+            <td><button onclick="rsaangka();">RSA Angka</button></td>
+        </tr>
+    </table>
     <h1 style="text-align: center;">RSA Teks</h1>
     <hr>
     <table class="center">
-    <tr>
-    <td> P:</td>
-    <td><input type="number" value="41" id="p2"></td>
-    </tr>
-    <tr>
-    <td> Q :</td>
-    <td><input type="number" value="11" id="q2"></p>
-    </td>
-    </tr>
-    <tr>
-    <td>Pesan:</td>
-    <td><input type="text" id="msg2" maxlength="1" size="1"></p>
-    </td>
-    </tr>
-    <tr>
-    <td>Public Key:</td>
-    <td>
-    <p id="publickey(N)2"></p>
-    </td>
-    </tr>
-    <tr>
-    <td>Eksponen:</td>
-    <td>
-    <p id="eksponen(e)2"></p>
-    </td>
-    </tr>
-    <tr>
-    <td>Private Key:</td>
-    <td>
-    <p id="privatekey(d)2"></p>
-    </td>
-    </tr>
-    <tr>
-    <td>Cipher Text:</td>
-    <td>
-    <p id="ciphertext(ct)2"></p>
-    </td>
-    </tr>
-    <td>Hasil Dekripsi:</td>
-    <td>
-    <p id="dekripsitext(dt)2"></p>
-    </td>
-    </tr>
-    <tr>
-        <td><button onclick="RSATeks();">RSA Teks</button></td>
+        <tr>
+            <td>Pesan:</td>
+            <td><textarea type="number" value="34" id="msg2"></textarea></td>
         </tr>
-        </table>
-    </body>
+        <tr>
+            <td>n:</td>
+            <td>
+                <p id="publickey(N)"></p>
+                <input type="number" value="34" id="n2">
+            </td>
+        </tr>
+        <tr>
+            <td>e:</td>
+            <td>
+                <p id="privatekey(d)"></p>
+                <input type="number" value="34" id="e2">
+            </td>
+        </tr>
+        <tr>
+            <td>d:</td>
+            <td>
+                <p id="privatekey(d)"></p>
+                <input type="number" value="34" id="d2">
+            </td>
+        </tr>
+        <tr>
+            <td>Cipher Text:</td>
+            <td>
+                <p id="ct2"></p>
+            </td>
+        </tr>
+        <td>Hasil Dekripsi:</td>
+        <td>
+            <p id="dt2"></p>
+        </td>
+        </tr>
+        <tr>
+            <td><button onclick="rsateks();">RSA Teks</button></td>
+        </tr>
+    </table>
+
+
     <style>
         .center {
-  margin-left: auto;
-  margin-right: auto;
-}
+            margin-left: auto;
+            margin-right: auto;
+        }
     </style>
-    <script>
-function powerMod(angka, eksponen, mod) {
-    if (mod === 1) return 0;
-    var hasil = 1;
-    angka = angka % mod;
-    while (eksponen > 0) {
-        if (eksponen % 2 === 1)  
-            hasil = (hasil * angka) % mod;
-        eksponen = eksponen >> 1; 
-        angka = (angka * angka) % mod;
-    }
-    return hasil;
-}
 
-function RSATeks() {
-var gcd, p, q, no, n, t, e, i, x,psn;
-gcd = function (a, b) { return (!b) ? a : gcd(b, a % b); };
-p = document.getElementById('p2').value;
-q = document.getElementById('q2').value;
-no = document.getElementById('msg2').value.charCodeAt(0);
-n = p * q;
-if (n<no){
-    document.getElementById('dekripsitext(dt)2').innerHTML = "n kurang dari pesan mohon diperbaiki";
-     return;
-    }
- t = (p - 1) * (q - 1);
- for (e = 2; e < t; e++) {
- if (gcd(e, t) == 1) {
- break;
-    }
-    }
-    for (i = 0; i < 50; i++) {
-    x = 1 + i * t
-    if (x % e == 0) {
-    d = x / e;
-    break;
-    }
-}
+<script src="rsa.js"></script>
 
-
-ct = powerMod(no, e,n).toFixed(0);
-dt = powerMod(ct, d,n).toFixed(0);
-
-
-
-document.getElementById('publickey(N)2').innerHTML = n;
-document.getElementById('eksponen(e)2').innerHTML = e;
-document.getElementById('privatekey(d)2').innerHTML = d;
-document.getElementById('ciphertext(ct)2').innerHTML = ct;
-document.getElementById('dekripsitext(dt)2').innerHTML = dt;
-}
-
-function RSA() {
-    var gcd, p, q, no, n, t, e, i, x;
-    gcd = function (a, b) { return (!b) ? a : gcd(b, a % b); };
-    p = document.getElementById('p').value;
-    q = document.getElementById('q').value;
-    no = document.getElementById('msg').value;
-    n = p * q;
-      if (n<no){
-        document.getElementById('dekripsitext(dt)').innerHTML = "n harus lebih dari pesan";
-        return;
-    }
-    t = (p - 1) * (q - 1);
-    for (e = 2; e < t; e++) {
-    if (gcd(e, t) == 1) {
-    break;
-    }
-    }
-    for (i = 0; i < 50; i++) {
-    x = 1 + i * t
-    if (x % e == 0) {
-    d = x / e;
-    break;
-    }
-}
-
-
-ct = powerMod(no, e,n).toFixed(0);
-dt = powerMod(ct, d,n).toFixed(0);
-
-
-
-document.getElementById('publickey(N)').innerHTML = n;
-document.getElementById('eksponen(e)').innerHTML = e;
-document.getElementById('privatekey(d)').innerHTML = d;
-document.getElementById('ciphertext(ct)').innerHTML = ct;
-document.getElementById('dekripsitext(dt)').innerHTML = dt;
-}
-</script>
 </html>
